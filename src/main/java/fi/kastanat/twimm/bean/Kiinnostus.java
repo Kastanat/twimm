@@ -4,7 +4,7 @@ public interface Kiinnostus {
 
 	public abstract int getId();
 
-	public abstract void setId(int id);
+	public abstract void setId(int i);
 
 	public abstract String getKiinnostus();
 
