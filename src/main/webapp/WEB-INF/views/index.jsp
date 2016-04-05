@@ -16,9 +16,20 @@
 	</head>
 	 
 	<body class="text-center">
-		<div class="col-md-5"><div class="tinder"><button value="no" class="nappi btn pull-right"><span class="glyphicon glyphicon-thumbs-down"></span></button></div></div>
-		<div class="col-md-2"><div class="tinder"><h1 id="teksti"></h1></div><div class="aloitus"><h1 style="color:red;"><b>SOFTALATINDERI</b></h1><br><br><p>
-			Ruudulle listautuu eri aihepiirejä. <br>Taitotasosta riippumatta, vastaa sen perusteella kiinnostaako aihe, vaikket vielä tuntisikaan sitä.</p><br><button class="alkaa btn">Aloita tästä</button></div><div class="kiinnostavat"></div></div>
-		<div class="col-md-5"><div class="tinder"><button value="yes" class="nappi btn pull-left"><span class="glyphicon glyphicon-thumbs-up"></span></button></div></div>
+		<div class="col-md-5">
+			<div class="tinder"><button value="no" class="nappi btn pull-right"><span class="glyphicon glyphicon-thumbs-down"></span></button>
+			</div>
+		</div>
+		<div class="col-md-2">
+			<div class="tinder"><h1 id="teksti"></h1></div>
+			<div class="aloitus"><h1 style="color:red;"><b>SOFTALATINDERI</b></h1><br><br><p>
+				Ruudulle listautuu eri aihepiirejä. <br>Taitotasosta riippumatta, vastaa sen perusteella kiinnostaako aihe, vaikket vielä tuntisikaan sitä.</p><br><button class="alkaa btn">Aloita tästä</button>
+			</div>
+			<div class="kiinnostavat"></div>
+		</div>
+		<div class="col-md-5">
+			<div class="tinder"><button value="yes" class="nappi btn pull-left"><span class="glyphicon glyphicon-thumbs-up"></span></button>
+			</div>
+		</div>
 	</body>
 </html>
