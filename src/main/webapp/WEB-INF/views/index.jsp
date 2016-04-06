@@ -29,15 +29,16 @@
 			</div>
 			<div class="kiinnostavat"></div>
 			<div class="lomake">
-				<form class="form-horizontal">
+				<form:form class="form-horizontal" modelAttribute="kayttaja" method="post">
 					<h3>Luo profiili: </h3>
 						<div class="form-group">
-							<label>Etunimi: </label><input type="text" class="form-control"/>
-							<label>Sukunimi: </label><input type="text" class="form-control"/>
-							<label>Sähköposti: </label><input type="text" class="form-control"/>
-							<label>Kuvaus: </label><textarea class="form-control" rows="3"></textarea>
+							<form:label path="etunimi">Etunimi: </form:label><form:input path="etunimi" class="form-control"/>
+							<form:label path="sukunimi">Sukunimi: </form:label><form:input path="sukunimi" class="form-control"/>
+							<form:label path="sahkoposti">Sähköposti: </form:label><form:input path="sahkoposti" class="form-control"/>
+							<form:label path="kuvaus">Kuvaus: </form:label><form:input path="kuvaus" class="form-control" rows="3"/>
 						</div>
-				</form>
+						<button type="submit">Luo</button>
+				</form:form>
 			</div>
 		</div>
 		<div class="col-md-4">
