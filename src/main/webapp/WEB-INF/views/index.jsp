@@ -27,19 +27,7 @@
 			<div class="aloitus"><h1 style="color:red;"><b>SOFTALATINDERI</b></h1><br><br><p>
 				Ruudulle listautuu eri aihepiirejä. <br>Taitotasosta riippumatta, vastaa sen perusteella kiinnostaako aihe, vaikket vielä tuntisikaan sitä.</p><br><button class="alkaa btn">Aloita tästä</button>
 			</div>
-			<div class="kiinnostavat"></div>
-			<div class="lomake">
-				<form:form class="form-horizontal" modelAttribute="kayttaja" method="post">
-					<h3>Luo profiili: </h3>
-						<div class="form-group">
-							<form:label path="etunimi">Etunimi: </form:label><form:input path="etunimi" class="form-control"/>
-							<form:label path="sukunimi">Sukunimi: </form:label><form:input path="sukunimi" class="form-control"/>
-							<form:label path="sahkoposti">Sähköposti: </form:label><form:input path="sahkoposti" class="form-control"/>
-							<form:label path="kuvaus">Kuvaus: </form:label><form:input path="kuvaus" class="form-control" rows="3"/>
-						</div>
-						<button type="submit">Luo</button>
-				</form:form>
-			</div>
+			<div class="kiinnostavat"></div><br><div class="lomake"><a href="kayttajat/lomake" style="color:red;">Siirry luomaan profiili</a></div>
 		</div>
 		<div class="col-md-4">
 			<div class="tinder"><button value="yes" class="nappi btn pull-left"><span class="glyphicon glyphicon-thumbs-up"></span></button>

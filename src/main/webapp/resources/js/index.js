@@ -51,9 +51,9 @@ $(document).ready(function() {
     $('#teksti').html(aihe);
     if(i === lista.length) {
       $(".tinder").hide();
+      var text = kiinnostavat.join("<br>");
+      $(".kiinnostavat").html("<h1>Sinua kiinnostivat: </h1><br><br>" + text);
       $(".lomake").show();
-      //var text = kiinnostavat.join("<br>");
-      //$(".kiinnostavat").html("<h1>Sinua kiinnostivat: </h1><br><br>" + text + "<p><h3>Jätäthän <a href='http://goo.gl/forms/glvh5CpspR' style='color:red;'>palautteen</a>, kiitos!</h3></p><br>");
       
     } else if ($(this).val() === yes) {
       kiinnostavat.push(lista[i - 1]);
