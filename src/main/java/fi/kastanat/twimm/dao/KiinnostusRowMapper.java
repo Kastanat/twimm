@@ -14,8 +14,8 @@ package fi.kastanat.twimm.dao;
 
 		public Kiinnostus mapRow(ResultSet rs, int rowNum) throws SQLException {
 			Kiinnostus k = new KiinnostusImpl();
-			k.setKiinnostus(rs.getString("kiinnostus"));
-			k.setId(rs.getInt("id"));
+			k.setKiinnostus(rs.getString("nimi"));
+			k.setId(rs.getInt("kiinnostus_id"));
 			
 			return k;
 		}

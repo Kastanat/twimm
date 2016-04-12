@@ -12,4 +12,6 @@ public interface KiinnostusDAO {
 
 	public abstract List<Kiinnostus> haeKaikki();
 
+	public abstract Kiinnostus haeKaikki(Integer id);
+
 }

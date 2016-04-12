@@ -1,5 +1,7 @@
 package fi.kastanat.twimm.controller;
 
+import java.util.List;
+
 import javax.inject.Inject;
 
 import org.springframework.stereotype.Controller;
@@ -14,6 +16,34 @@ import fi.kastanat.twimm.bean.KiinnostusImpl;
 import fi.kastanat.twimm.dao.KiinnostusDAO;
 
 
-public class KiinnostusController {
 
+
+@Controller
+@RequestMapping (value="/")
+
+public class KiinnostusController {
+	
+	
+	@Inject
+	private KiinnostusDAO dao;
+	
+	public KiinnostusDAO getDao() {
+		return dao;
+	}
+
+	public void setDao(KiinnostusDAO dao) {
+		this.dao = dao;
+	
+	
+}
+	
+	//kiinnostuksien näyttäminen
+		@RequestMapping(value="", method=RequestMethod.GET)
+		public String haeKaikki( Model model) {
+			 List<Kiinnostus> kiinnostukset = dao.haeKaikki();
+			System.out.println("kiinnostus: "+kiinnostukset);
+			model.addAttribute("kiinnostukset", kiinnostukset);
+			return "tinderi";
+		}
+		
 }
