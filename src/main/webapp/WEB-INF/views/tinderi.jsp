@@ -22,22 +22,42 @@
 			<div class="tinder"><button value="no" class="nappi btn pull-right"><span class="glyphicon glyphicon-thumbs-down"></span></button>
 			</div>
 		</div>
-		<div class="col-md-4">
-			<div class="tinder"><h1 id="teksti"></h1></div>
-			<div class="aloitus"><h1 style="color:red;"><b>SOFTALATINDERI</b></h1><br><br><p>
-				Ruudulle listautuu eri aihepiirejä. <br>Taitotasosta riippumatta, vastaa sen perusteella kiinnostaako aihe, vaikket vielä tuntisikaan sitä.</p><br><button class="alkaa btn">Aloita tästä</button>
-			</div>
-			<div class="kiinnostavat">
+	<div class="col-md-4">
+		<div class="tinder">
+			<h1 id="teksti"></h1>
+		</div>
+		<div class="aloitus">
+			<h1 style="color: red;">
+				<b>SOFTALATINDERI</b>
+			</h1>
+			<br>
+			<br>
+			<p>
+				Ruudulle listautuu eri aihepiirejä. <br>Taitotasosta
+				riippumatta, vastaa sen perusteella kiinnostaako aihe, vaikket vielä
+				tuntisikaan sitä.
+			</p>
+			<br>
+			<button class="alkaa btn">Aloita tästä</button>
+		</div>
+		<div class="kiinnostavat">
 			<div class="tinder">
-			<c:forEach items="${kiinnostukset}" var="kiinnostus" varStatus="count" begin="0" end="0">
-			
-				<p><c:out value="${kiinnostus.kiinnostus}" default="-----"/></p>
-				<p><a href="uusi">Takaisin</a></c:forEach></div>
-	</div><br><div class="lomake"><a href="kayttajat/lomake" style="color:red;">Siirry luomaan profiili</a></div>
-		</div>
-		<div class="col-md-4">
-			<div class="tinder"><button value="yes" class="nappi btn pull-left"><span class="glyphicon glyphicon-thumbs-up"></span></button>
+				<c:forEach items="${kiinnostukset}" var="kiinnostus"
+					varStatus="count" begin="0" end="0">
+					<p><c:out value="${kiinnostus.kiinnostus}"/></p>
+				</c:forEach>
 			</div>
+		</div><br>
+		<div class="lomake">
+			<a href="kayttajat/lomake" style="color: red;">Siirry luomaan profiili</a><br> <a href="kayttajat/profiilisivu" style="color: red;">Näytä</a>
 		</div>
-	</body>
+	</div>
+	<div class="col-md-4">
+		<div class="tinder">
+			<button value="yes" class="nappi btn pull-left">
+				<span class="glyphicon glyphicon-thumbs-up"></span>
+			</button>
+		</div>
+	</div>
+</body>
 </html>
