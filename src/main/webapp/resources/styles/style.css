@@ -1,7 +1,48 @@
 h1 {
-  display: inline;
+	display: inline;
+	font-size: 150px;
 }
 body {
-  margin-top: 40px;
+	margin-top: 40px;
+	font-size: 20px !important;
+}
+#jumbobg {
+	background: #d747ed; /* For browsers that do not support gradients */
+	background: -webkit-linear-gradient(135deg, #d747ed, #47ecea);
+	/* For Safari 5.1 to 6.0 */
+	background: -o-linear-gradient(135deg, #d747ed, #47ecea);
+	/* For Opera 11.1 to 12.0 */
+	background: -moz-linear-gradient(135deg, #d747ed, #47ecea);
+	/* For Firefox 3.6 to 15 */
+	background: linear-gradient(135deg, #d747ed, #47ecea);
+	/* Standard syntax */
 }
 
+#jumbotext {
+	font-family: Arial,Helvetica Neue,Helvetica,sans-serif;
+	font-size: 24px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 500;
+	line-height: 26.4px;
+	color: white;
+}
+#kiinnostusboxleft {
+	border-right:1px solid #404040;
+	
+}
+
+
+.border-right {
+	border-right: 1px solid #ddd;
+}
+
+.borders {
+	border-left: 1px solid #ddd;
+	border-right: 1px solid #ddd;
+	margin: -1px;
+}
+
+.border-left {
+	border-left: 1px solid #ddd;
+}
