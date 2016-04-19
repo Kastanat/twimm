@@ -13,6 +13,49 @@
 		
 		<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
 		<script src='http://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js'></script>
+		<script>
+		
+		var lista = [];
+		<c:forEach items="${kiinnostukset}" var="kiinnostus">
+		  var arr = [];
+
+		  arr.push("<c:out value="${kiinnostus.kiinnostus}" />");
+
+		  lista.push(arr);
+		</c:forEach>
+		
+		 /*var lista = [ 
+		              "Dokumentointi",
+		              "XML",
+		              "CSS",
+		              "Tietokannat",
+		              "HTML",
+		              "UI suunnittelu",
+		              "Javascript",
+		              "SQL",
+		              ".NET",
+		              "C#",
+		              "Python",
+		              "iOS",
+		              "PHP",
+		              "Java",
+		              "Android",
+		              "Java EE",
+		              "Spring",
+		              "Drupal",
+		              "C",
+		              "MongoDB",
+		              "jQuery",
+		              "Ruby",
+		              "Scala",
+		              "Ruby on Rails",
+		              "Node.js",
+		              "Maven",
+		              "Rest",
+		              "C++",
+		              "Angular.js"
+		            ];*/
+		</script>
 		<script src="resources/js/index.js"></script>  
 	
 	</head>
@@ -40,12 +83,10 @@
 			<br>
 			<button class="alkaa btn">Aloita tästä</button>
 		</div>
+		
 		<div class="kiinnostavat">
 			<div class="tinder">
-				<c:forEach items="${kiinnostukset}" var="kiinnostus"
-					varStatus="count" begin="0" end="0">
-					<p><c:out value="${kiinnostus.kiinnostus}"/></p>
-				</c:forEach>
+			
 			</div>
 		</div><br>
 		<div class="lomake">

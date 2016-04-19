@@ -1,5 +1,6 @@
 package fi.kastanat.twimm.controller;
 
+import java.util.LinkedList;
 import java.util.List;
 
 import javax.inject.Inject;
@@ -40,7 +41,9 @@ public class KiinnostusController {
 	//kiinnostuksien näyttäminen
 		@RequestMapping(value="", method=RequestMethod.GET)
 		public String haeKaikki( Model model) {
-			 List<Kiinnostus> kiinnostukset = dao.haeKaikki();
+			
+			List<Kiinnostus> kiinnostukset = dao.haeKaikki();
+			 
 			System.out.println("kiinnostus: "+kiinnostukset);
 			model.addAttribute("kiinnostukset", kiinnostukset);
 			return "tinderi";

@@ -1,37 +1,6 @@
 $(document).ready(function() {
 
-  var lista = [
-    "Dokumentointi",
-    "XML",
-    "CSS",
-    "Tietokannat",
-    "HTML",
-    "UI suunnittelu",
-    "Javascript",
-    "SQL",
-    ".NET",
-    "C#",
-    "Python",
-    "iOS",
-    "PHP",
-    "Java",
-    "Android",
-    "Java EE",
-    "Spring",
-    "Drupal",
-    "C",
-    "MongoDB",
-    "jQuery",
-    "Ruby",
-    "Scala",
-    "Ruby on Rails",
-    "Node.js",
-    "Maven",
-    "Rest",
-    "C++",
-    "Angular.js"
-  ];
-
+ 
   var i = 0;
   var yes = "yes";
   var aihe = lista[0];
