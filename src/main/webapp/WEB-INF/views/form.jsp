@@ -24,6 +24,7 @@
 				<form:label path="kuvaus">Kuvaus: </form:label>
 				<form:input path="kuvaus" class="form-control" rows="3" />
 			</div>
+			
 			<button type="submit" class="btn">Luo</button>
 		</form:form>
 	</div>

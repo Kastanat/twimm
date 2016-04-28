@@ -57,16 +57,16 @@
 
 
 
-	<%-- <h1>Profiilisivu</h1>
+	<h1>Profiilisivu</h1>
+	
 	<p><c:out value="${kayttaja.etunimi}" default="-----"/></p>
 	<p><c:out value="${kayttaja.sukunimi}" default="-----"/></p>
-	<p><c:out value="${kayttaja.sähköposti}" default="-----"/></p>
+	<p><c:out value="${kayttaja.sahkoposti}" default="-----"/></p>
 	<p><c:out value="${kayttaja.kuvaus}" default="-----"/></p>
 	<p>Kiinnostuksesi: </p>
 	<p><c:forEach var="kiinnostus" items="kiinnostukset">
 	    <c:out value="${kiinnostus}"/><p>
-	</c:forEach> --%>
-
+	</c:forEach> 
 	<p>
 		<a href="uusi">Takaisin</a>
 </body>
