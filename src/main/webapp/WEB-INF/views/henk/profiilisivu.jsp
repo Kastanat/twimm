@@ -25,19 +25,21 @@
 
 </head>
 <body>
-	<div class="container">
-		<div class="jumbotron" id="jumbobg">
-			<img alt="kuva" src="../resources/images/tinder.jpg" style="border-radius:100%;max-width:30%;">
-			<span id="jumbotext">
-				<h2>Esimerkki Käyttäjä</h2>
-				<p class="lead">Tämä on lyhyt kuvaus</p>
+	<div class="container jumborunko">
+		<div class="jumbotron jumbobg">
+			<img alt="kuva" src="../resources/images/tinder.jpg" class="profiilikuva">
+			<span class="jumbotext">
+				<h2><c:out value="${kayttaja.etunimi}" default="-----"/>&nbsp;<c:out value="${kayttaja.sukunimi}" default="-----"/></h2>
+				<p class="lead"><c:out value="${kayttaja.kuvaus}" default="-----"/></p></p>
 			</span>
 		</div>
 		<div class="row marketing">
-			<div class="col-lg-6" id="kiinnostusboxleft">
+			<div class="col-lg-6 kiinnostusboxleft">
 			
-				<p><b>Kiinnostukset: asdfasdfasfd</b></p>
-				Voihan venäjä
+				<p><b>Kiinnostuksesi:</b></p>
+				<c:forEach var="kiinnostus" items="kiinnostukset">
+				    <c:out value="${kiinnostus}"/><p>
+				</c:forEach> </p>
 			</div>
 			
 
@@ -49,25 +51,7 @@
 		</div>
 	</div>
 
-
-
-
-
-
-
-
-
-	<h1>Profiilisivu</h1>
-	
-	<p><c:out value="${kayttaja.etunimi}" default="-----"/></p>
-	<p><c:out value="${kayttaja.sukunimi}" default="-----"/></p>
-	<p><c:out value="${kayttaja.sahkoposti}" default="-----"/></p>
-	<p><c:out value="${kayttaja.kuvaus}" default="-----"/></p>
-	<p>Kiinnostuksesi: </p>
-	<p><c:forEach var="kiinnostus" items="kiinnostukset">
-	    <c:out value="${kiinnostus}"/><p>
-	</c:forEach> 
 	<p>
-		<a href="uusi">Takaisin</a>
+		<!--  <c:out value="${kayttaja.sahkoposti}" default="-----"/> -->
 </body>
 </html>
