@@ -27,25 +27,52 @@
 <body>
 	<div class="container jumborunko">
 		<div class="jumbotron jumbobg">
-			<img alt="kuva" src="../resources/images/tinder.jpg" class="profiilikuva">
-			<span class="jumbotext">
+			<img src="../resources/images/tinder.jpg" alt="käyttäjän oma kuva" class="profiilikuva">
+			<div class="jumbotext">
 				<h2><c:out value="${kayttaja.etunimi}" default="-----"/>&nbsp;<c:out value="${kayttaja.sukunimi}" default="-----"/></h2>
-				<p class="lead"><c:out value="${kayttaja.kuvaus}" default="-----"/></p></p>
-			</span>
+				<p class="lead"><c:out value="${kayttaja.kuvaus}" default="-----"/></p>
+			</div>
 		</div>
 		<div class="row marketing">
-			<div class="col-lg-6 kiinnostusboxleft">
+			<div class="col-lg-6">
 			
 				<p><b>Kiinnostuksesi:</b></p>
 				<c:forEach var="kiinnostus" items="kiinnostukset">
-				    <c:out value="${kiinnostus}"/><p>
-				</c:forEach> </p>
+				    <c:out value="${kiinnostus}"/><p />
+				</c:forEach>
 			</div>
 			
 
-			<div class="col-lg-6">
-
-				<p>Kiinalainen koira: </p>
+			<div class="col-lg-6 ruudunjakaja">
+			<ul class="media-list main-list">
+			  <li class="media">
+			    <div class="pull-left">
+			      <img class="media-object" src="../resources/images/tinder.jpg" alt="käyttäjän profiilikuvake" id="kuvake">
+			    </div>
+			    <div class="media-body">
+			      <h4 class="media-heading">Henkilö yksi</h4>
+			      <p class="by-author">Yhteisiä kiinnostuksia X kpl</p>
+			    </div>
+			  </li>
+			  <li class="media">
+			    <div class="pull-left">
+			      <img class="media-object" src="../resources/images/tinder.jpg" alt="käyttäjän profiilikuvake" id="kuvake">
+			    </div>
+			    <div class="media-body">
+			      <h4 class="media-heading">Henkilö Heppu</h4>
+			      <p class="by-author">Yhteisiä kiinnostuksia X kpl</p>
+			    </div>
+			  </li>
+			  <li class="media">
+			    <div class="pull-left">
+			      <img class="media-object" src="http://placehold.it/150x90" alt="käyttäjän profiilikuvake" id="kuvake">
+			    </div>
+			    <div class="media-body">
+			      <h4 class="media-heading">Laijo Jeppinen</h4>
+			      <p class="by-author">Yhteisiä kiinnostuksia X kpl</p>
+			    </div>
+			  </li>
+			</ul>
 				
 			</div>
 		</div>

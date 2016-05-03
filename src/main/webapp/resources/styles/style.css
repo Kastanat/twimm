@@ -20,7 +20,7 @@ body {
 	text-align: center;
 	padding:3%;
 	margin-bottom:30px;
-	max-width:1700px !important;
+
 }
 .reunus {
 	border: 1px solid black;
@@ -30,14 +30,24 @@ body {
 .roundpicture {	
 	border-radius: 100%;
 	max-width: 30% !important;
-    display: block;
-    margin-left: auto;
+    display: inline-block;
+    float:left;
     margin-right: auto;
 }
 
 .profiilikuva {
 	border-radius:100%;
 	max-width:30%;
+}
+
+/**	Huomaa seuraavassa  #  , eli ID
+* 	Tämä Bootstrap yhteensopivuusongelmann vuoksi.
+*	Helpoin tapa ohittaa ongelmat oli käyttää id-tagia HTML-koodissa.
+*/
+#kuvake {	
+	width: 120px !important;
+	height: 120px !important;
+	border-radius: 100% !important;
 }
 
 .jumbotext {
@@ -53,13 +63,19 @@ body {
 	max-width:1700px !important;
 }
 
-.kiinnostusboxleft {
-	border-right:1px solid #404040;
-	
+.ruudunjakaja {
+	border-left:1px solid #cccccc;
 }
+ @media all and (max-width: 1200px) { 
+	 .ruudunjakaja {
+		border-left:none;
+		border-top:1px solid #cccccc;
+		padding-top: 25px;
+	 }
+}
+
 col-md-12 {
-	 max-width:1700px !important;
-	 
+	 max-width:1700px !important;	 
 }
 
 .border-right {
@@ -76,11 +92,9 @@ col-md-12 {
 	border-left: 1px solid #ddd;
 }
 
-/** ALLA ON COPYPASTE
-OSOITTEESTA
+/** ALLA ON COPYPASTE OSOITTEESTA 
 http://bootsnipp.com/snippets/featured/article-thumbnails
 */
-
 /* image thumbnail */
 .thumb {
     display: block;
@@ -136,7 +150,15 @@ http://bootsnipp.com/snippets/featured/article-thumbnails
 	
 }
 
-.main-list .media {
-	padding-bottom: 1.1em;
-	border-bottom: 1px solid #e8e8e8;
+.media-body {
+	padding-top: 35px !important;
 }
+
+.main-list .media .heading{
+	padding-bottom: 1.1em;
+	/*
+	border-bottom: 1px solid #e8e8e8;
+	*/
+}
+/** http://bootsnipp.com/snippets/featured/article-thumbnails PÄÄTTYY */
+
