@@ -13,10 +13,22 @@ import fi.kastanat.twimm.bean.Kayttaja;
 import fi.kastanat.twimm.bean.KayttajaImpl;
 import fi.kastanat.twimm.dao.KayttajaDAO;
 
+
+
 @Controller
 @RequestMapping (value="/kayttajat")
 public class KayttajaController {
 
+	@Inject
+	private KayttajaDAO dao;
+	
+	public KayttajaDAO getDao() {
+		return dao;
+	}
+
+	public void setDao(KayttajaDAO dao) {
+		this.dao = dao;
+	}
 	
 	//FORMIN TEKEMINEN
 	@RequestMapping(value="lomake", method=RequestMethod.GET)
@@ -28,10 +40,24 @@ public class KayttajaController {
 		return "form";
 	}
 	//HENKILÖN TIETOJEN NÄYTTÄMINEN
-	@RequestMapping(value="profiilisivu", method=RequestMethod.GET)
-	public String getView() {
-		
+	@RequestMapping(value="{id}", method=RequestMethod.GET)
+	public String getView(@PathVariable Integer id, Model model) {
+		Kayttaja kayttaja = dao.etsi(id);
+		model.addAttribute("kayttaja", kayttaja);
+	
 		
 		return "henk/profiilisivu";
 	}
+
+	//FORMIN TIETOJEN VASTAANOTTO
+		@RequestMapping(value="lomake", method=RequestMethod.POST)
+		public String create( @ModelAttribute(value="kayttaja") KayttajaImpl kayttaja) {
+			dao.talleta(kayttaja);
+			return "redirect:/kayttajat/" + kayttaja.getId();
+		}
+		
+
+
+
+
 }

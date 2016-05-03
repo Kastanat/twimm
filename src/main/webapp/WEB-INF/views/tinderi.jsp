@@ -17,11 +17,9 @@
 		
 		var lista = [];
 		<c:forEach items="${kiinnostukset}" var="kiinnostus">
-		  var arr = [];
-
-		  arr.push("<c:out value="${kiinnostus.kiinnostus}" />");
-
-		  lista.push(arr);
+			var arr = [];
+		  	arr.push("<c:out value="${kiinnostus.kiinnostus}" />");
+		 	lista.push(arr);
 		</c:forEach>
 		
 		 /*var lista = [ 
