@@ -30,7 +30,7 @@
 			<img alt="kuva" src="../resources/images/tinder.jpg" class="profiilikuva">
 			<span class="jumbotext">
 				<h2><c:out value="${kayttaja.etunimi}" default="-----"/>&nbsp;<c:out value="${kayttaja.sukunimi}" default="-----"/></h2>
-				<p class="lead"><c:out value="${kayttaja.kuvaus}" default="-----"/></p><c:out value="${kayttaja.sahkoposti}" default="-----"/></p></p>
+				<p class="lead"><c:out value="${kayttaja.kuvaus}" default="-----"/></p></p>
 			</span>
 		</div>
 		<div class="row marketing">
@@ -52,6 +52,6 @@
 	</div>
 
 	<p>
-		<a href="uusi">Takaisin</a>
+		<!--  <c:out value="${kayttaja.sahkoposti}" default="-----"/> -->
 </body>
 </html>
