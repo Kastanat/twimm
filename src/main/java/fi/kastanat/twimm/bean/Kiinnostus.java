@@ -10,8 +10,4 @@ public interface Kiinnostus {
 
 	public abstract void setKiinnostus(String kiinnostus);
 
-	
-
 }
-
-

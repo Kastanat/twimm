@@ -1,12 +1,15 @@
 package fi.kastanat.twimm.bean;
 
-public class KayttajaImpl implements Kayttaja {
+import java.util.List;
+
+public class KayttajaImpl implements Kayttaja{
 	
 	private int id;
 	private String etunimi;
 	private String sukunimi;
 	private String sahkoposti;
 	private String kuvaus;
+	private List<Kiinnostus> kiinnostukset;
 	
 	public int getId() {
 		return id;
@@ -47,7 +50,15 @@ public class KayttajaImpl implements Kayttaja {
 	public void setKuvaus(String kuvaus) {
 		this.kuvaus = kuvaus;
 	}
-	
+
+	public List<Kiinnostus> getKiinnostukset() {
+		return kiinnostukset;
+	}
+
+	public void setKiinnostukset(List<Kiinnostus> kiinnostukset) {
+		this.kiinnostukset = kiinnostukset;
+	}
+
 	@Override
 	public String toString() {
 		return "KayttajaImpl [id=" + id + ", etunimi=" + etunimi

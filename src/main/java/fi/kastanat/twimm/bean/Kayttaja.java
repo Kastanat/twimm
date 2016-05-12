@@ -1,5 +1,8 @@
 package fi.kastanat.twimm.bean;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public interface Kayttaja {
 
 	public abstract int getId();
@@ -21,5 +24,9 @@ public interface Kayttaja {
 	public abstract String getKuvaus();
 
 	public abstract void setKuvaus(String kuvaus);
+	
+	public abstract List<Kiinnostus> getKiinnostukset();
+	
+	public abstract void setKiinnostukset(List<Kiinnostus> kiinnostukset);
 
 }

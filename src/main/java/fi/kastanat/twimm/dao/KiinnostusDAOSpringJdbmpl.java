@@ -39,7 +39,7 @@ public class KiinnostusDAOSpringJdbmpl implements KiinnostusDAO{
 
 		return kiinnostukset;
 
-}
+	}
 	
 	
 
@@ -52,8 +52,4 @@ public class KiinnostusDAOSpringJdbmpl implements KiinnostusDAO{
 		// TODO Auto-generated method stub
 		return null;
 	}
-
-	public Kiinnostus haeKaikki(Integer id) {
-		// TODO Auto-generated method stub
-		return null; 
-	}}
+}
