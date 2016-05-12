@@ -1,12 +1,13 @@
 h1 {
 	display: inline;
-	font-size: 150px;
+	font-size: 40px;
 }
 body {
 	margin-top: 40px;
 	font-size: 20px !important;
 }
-#jumbobg {
+
+.jumbobg {
 	background: #d747ed; /* For browsers that do not support gradients */
 	background: -webkit-linear-gradient(135deg, #d747ed, #47ecea);
 	/* For Safari 5.1 to 6.0 */
@@ -16,22 +17,65 @@ body {
 	/* For Firefox 3.6 to 15 */
 	background: linear-gradient(135deg, #d747ed, #47ecea);
 	/* Standard syntax */
+	text-align: center;
+	padding:3%;
+	margin-bottom:30px;
+}
+.reunus {
+	border: 1px solid black;
 }
 
-#jumbotext {
+
+.roundpicture {	
+	border-radius: 100%;
+	max-width: 30% !important;
+    display: inline-block;
+    float:left;
+    margin-right: auto;
+}
+
+.profiilikuva {
+	border-radius:100%;
+	max-width:30%;
+}
+
+/**	Huomaa seuraavassa  #  , eli ID
+* 	Tämä Bootstrap yhteensopivuusongelmann vuoksi.
+*	Helpoin tapa ohittaa ongelmat oli käyttää id-tagia HTML-koodissa.
+*/
+#kuvake {	
+	width: 120px !important;
+	height: 120px !important;
+	border-radius: 100% !important;
+}
+
+.jumbotext {
 	font-family: Arial,Helvetica Neue,Helvetica,sans-serif;
 	font-size: 24px;
 	font-style: normal;
 	font-variant: normal;
 	font-weight: 500;
 	line-height: 26.4px;
-	color: white;
+	color: white;	
 }
-#kiinnostusboxleft {
-	border-right:1px solid #404040;
-	
+.jumborunko {
+	max-width:1700px !important;
 }
 
+.ruudunjakaja {
+	border-left:1px solid #cccccc;
+}
+ @media all and (max-width: 1200px) { 
+	 .ruudunjakaja {
+		border-left:none;
+		border-top:1px solid #cccccc;
+		padding-top: 25px;
+	 }
+}
+
+col-md-12 {
+	 max-width:1700px !important;	 
+}
 
 .border-right {
 	border-right: 1px solid #ddd;
@@ -46,3 +90,73 @@ body {
 .border-left {
 	border-left: 1px solid #ddd;
 }
+
+/** ALLA ON COPYPASTE OSOITTEESTA 
+http://bootsnipp.com/snippets/featured/article-thumbnails
+*/
+/* image thumbnail */
+.thumb {
+    display: block;
+	width: 100%;
+	margin: 0;
+}
+
+/* Style to article Author */
+.by-author {
+	font-style: italic;
+	line-height: 1.3;
+	color: #aab6aa;
+}
+
+/* Main Article [Module]
+-------------------------------------
+* Featured Article Thumbnail
+* have an image and a text title.
+*/
+.featured-article {
+	width: 482px;
+	height: 350px;
+	position: relative;
+	margin-bottom: 1em;
+}
+
+.featured-article .block-title {
+	/* Position & Box Model */
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	z-index: 1;
+	/* background */
+	background: rgba(0,0,0,0.7);
+	/* Width/Height */
+	padding: .5em;
+	width: 100%;
+	/* Text color */
+	color: #fff;
+}
+
+.featured-article .block-title h2 {
+	margin: 0;
+}
+
+/* Featured Articles List [BS3]
+--------------------------------------------
+* show the last 3 articles post
+*/
+
+.main-list {
+	padding-left: .5em;	
+}
+
+.media-body {
+	padding-top: 35px !important;
+}
+
+.main-list .media .heading{
+	padding-bottom: 1.1em;
+	/*
+	border-bottom: 1px solid #e8e8e8;
+	*/
+}
+/** http://bootsnipp.com/snippets/featured/article-thumbnails PÄÄTTYY */
+
