@@ -19,10 +19,14 @@
 	<!-- TINDERI SCRIPTI -->
 	<script>		
 		var lista = [];
+		var idLista = [];
 		<c:forEach items="${kiinnostukset}" var="kiinnostus">
 			var arr = [];
+			var idArr = [];
 		  	arr.push("<c:out value="${kiinnostus.kiinnostus}" />");
+		  	idArr.push("<c:out value="${kiinnostus.id}" />");
 		 	lista.push(arr);
+		 	idLista.push(idArr)
 		</c:forEach>
 	</script>
 	<script src="resources/js/index.js"></script>  
