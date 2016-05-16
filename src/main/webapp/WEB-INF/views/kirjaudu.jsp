@@ -38,7 +38,9 @@
 		<br><br>
 		<label>Sähköposti: </label><input type='text' name='j_username' value='' class="form-control"><br>
 		<label>Salasana: </label><input type='password' name='j_password' class="form-control"/><br>
-		<button type="submit" class="btn">Kirjaudu</button>
+		<button type="submit" class="btn btn-success">Kirjaudu</button>
+		<br><br><br><br>
+		<a href="/twimm" class="btn btn-default">Etusivulle</a>
 		</div>
 	</form>
 	</div>

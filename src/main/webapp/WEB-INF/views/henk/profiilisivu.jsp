@@ -3,6 +3,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -36,11 +37,12 @@
 			<div class="col-lg-6">
 			
 				<p><b>Kiinnostuksesi:</b></p>
-				<c:forEach var="kiinnostus" items="kiinnostukset">
-				    <c:out value="${kiinnostus}"/><p />
-				</c:forEach>
+				<p><c:forEach var="kiinnostus" items="${kayttaja.kiinnostukset}">
+				    <c:out value="${kiinnostus.kiinnostus}"/><br>
+				</c:forEach></p>
 			</div>
 			<div class="col-lg-6 ruudunjakaja">
+			<p><b>Muita käyttäjiä:</b></p>
 			<ul class="media-list main-list">
 			<c:forEach items="${kayttajat}" var="kayt">
 			  <li class="media">
@@ -49,28 +51,12 @@
 			    </div>
 			    <div class="media-body">
 			      <h4 class="media-heading"><c:out value="${kayt.etunimi}"/> <c:out value="${kayt.sukunimi}"/></h4>
-			      <p class="by-author"><c:forEach items="${kayt.kiinnostukset}" var="kiin"><c:out value="${kiin.kiinnostus}"/>, </c:forEach></p>
+			      <p class="by-author">
+			      <c:forEach items="${kayt.kiinnostukset}" var="kiin">
+			      <c:out value="${kiin.kiinnostus}"/>  </c:forEach></p>
 			    </div>
 			  </li>
 			  </c:forEach>
-			  <li class="media">
-			    <div class="pull-left">
-			      <img class="media-object" src="../resources/images/tinder.png" alt="käyttäjän profiilikuvake" id="kuvake">
-			    </div>
-			    <div class="media-body">
-			      <h4 class="media-heading">Henkilö Heppu</h4>
-			      <p class="by-author">Yhteisiä kiinnostuksia X kpl</p>
-			    </div>
-			  </li>
-			  <li class="media">
-			    <div class="pull-left">
-			      <img class="media-object" src="../resources/images/tinder.png" alt="käyttäjän profiilikuvake" id="kuvake">
-			    </div>
-			    <div class="media-body">
-			      <h4 class="media-heading">Laijo Jeppinen</h4>
-			      <p class="by-author">Yhteisiä kiinnostuksia X kpl</p>
-			    </div>
-			  </li>
 			</ul>
 				
 			</div>

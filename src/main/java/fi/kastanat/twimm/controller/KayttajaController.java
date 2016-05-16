@@ -64,8 +64,7 @@ public class KayttajaController {
 		
 		return "henk/profiilisivu";
 	}
-	*/
-
+*/
 	//FORMIN TIETOJEN VASTAANOTTO
 	@RequestMapping(value="lomake", method=RequestMethod.POST)
 	public String create( @ModelAttribute(value="kayttaja") KayttajaImpl kayttajaImpl) {
