@@ -32,6 +32,9 @@
 	<script src="resources/js/index.js"></script>  
 	
 </head>
+<header class="jumbobg">
+	<img alt="twimmlogo" src="resources/images/twimm.png" height="200px">
+</header>
 	 
 <body class="text-center">
 	<div class="col-md-4">
@@ -43,8 +46,8 @@
 			<h1 id="teksti"></h1>
 		</div>
 		<div class="aloitus">
-			<h1><b>SOFTALATINDERI</b></h1>
-			<br><br>
+			<!--  <h1><b>SOFTALATINDERI</b></h1>
+			<br><br>-->
 			<p>
 				Ruudulle listautuu eri aihepiirejä. <br>Taitotasosta
 				riippumatta, vastaa sen perusteella kiinnostaako aihe, vaikket vielä

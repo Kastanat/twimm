@@ -20,6 +20,7 @@ body {
 	text-align: center;
 	padding:3%;
 	margin-bottom:30px;
+	margin-top: -50px
 }
 .reunus {
 	border: 1px solid black;
@@ -40,8 +41,8 @@ body {
 }
 
 /**	Huomaa seuraavassa  #  , eli ID
-* 	Tämä Bootstrap yhteensopivuusongelmann vuoksi.
-*	Helpoin tapa ohittaa ongelmat oli käyttää id-tagia HTML-koodissa.
+* 	Tï¿½mï¿½ Bootstrap yhteensopivuusongelmann vuoksi.
+*	Helpoin tapa ohittaa ongelmat oli kï¿½yttï¿½ï¿½ id-tagia HTML-koodissa.
 */
 #kuvake {	
 	width: 120px !important;
@@ -158,5 +159,5 @@ http://bootsnipp.com/snippets/featured/article-thumbnails
 	border-bottom: 1px solid #e8e8e8;
 	*/
 }
-/** http://bootsnipp.com/snippets/featured/article-thumbnails PÄÄTTYY */
+/** http://bootsnipp.com/snippets/featured/article-thumbnails Pï¿½ï¿½TTYY */
 
