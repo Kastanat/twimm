@@ -27,6 +27,8 @@
 				<form:input path="sahkoposti" class="form-control" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,63}$"
 										oninvalid="setCustomValidity('Syötä sähköposti oikeassa muodossa (nimi@maili.com) ')"
    										onchange="try{setCustomValidity('')}catch(e){}" required="required" />
+   				<form:label path="salasana">Salasana: </form:label>
+   				<form:input path="salasana" type="password" class="form-control" required="required"/>
 				<form:label path="kuvaus">Kuvaus: </form:label>
 				<form:input path="kuvaus" class="form-control" rows="3" />
 			</div>			

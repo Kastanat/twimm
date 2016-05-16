@@ -7,9 +7,7 @@ import java.util.List;
 import javax.inject.Inject;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Scope;
 import org.springframework.http.MediaType;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -18,13 +16,11 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.context.request.SessionScope;
 
 import fi.kastanat.twimm.bean.Kayttaja;
 import fi.kastanat.twimm.bean.KayttajaImpl;
 import fi.kastanat.twimm.bean.KayttajanKiinnostukset;
 import fi.kastanat.twimm.bean.Kiinnostus;
-import fi.kastanat.twimm.bean.KiinnostusImpl;
 import fi.kastanat.twimm.dao.KayttajaDAO;
 
 
@@ -57,7 +53,7 @@ public class KayttajaController {
 		return "form";
 	}
 	//HENKILÖN TIETOJEN NÄYTTÄMINEN
-	@RequestMapping(value="{id}", method=RequestMethod.GET)
+	/*@RequestMapping(value="{id}", method=RequestMethod.GET)
 	public String getView(@PathVariable Integer id, Model model) {
 		Kayttaja kayttaja = dao.etsi(id);
 		List<Kiinnostus> kaytKiinnostukset = dao.etsiKiinnostukset(id);
@@ -68,10 +64,13 @@ public class KayttajaController {
 		
 		return "henk/profiilisivu";
 	}
+	*/
 
 	//FORMIN TIETOJEN VASTAANOTTO
 	@RequestMapping(value="lomake", method=RequestMethod.POST)
 	public String create( @ModelAttribute(value="kayttaja") KayttajaImpl kayttajaImpl) {
+		kayttajaImpl.setEnabled(1);
+		kayttajaImpl.setRoleId(1);
 		dao.talleta(kayttajaImpl);
 		//id:iden pitäisi olla nyt session scopatussa kayttaja beanissa.
 		for (int i = 0; i < kiinnostuksetScope.getKiinnostukset().size(); i++) {
@@ -79,7 +78,7 @@ public class KayttajaController {
 		}
 		
 		System.out.println(kiinnostuksetScope.getKiinnostukset().toString());
-		return "redirect:/kayttajat/" + kayttajaImpl.getId();
+		return "ohjaus";
 	}
 		
 	@RequestMapping(value="talletakiinnostukset", method=RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)

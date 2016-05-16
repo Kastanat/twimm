@@ -2,6 +2,8 @@ package fi.kastanat.twimm.bean;
 
 import java.util.List;
 
+import fi.kastanat.twimm.util.SalasanaKryptaaja;
+
 public class KayttajaImpl implements Kayttaja{
 	
 	private int id;
@@ -9,6 +11,9 @@ public class KayttajaImpl implements Kayttaja{
 	private String sukunimi;
 	private String sahkoposti;
 	private String kuvaus;
+	private String salasana;
+	private int enabled;
+	private int roleId;
 	private List<Kiinnostus> kiinnostukset;
 	
 	public int getId() {
@@ -57,6 +62,32 @@ public class KayttajaImpl implements Kayttaja{
 
 	public void setKiinnostukset(List<Kiinnostus> kiinnostukset) {
 		this.kiinnostukset = kiinnostukset;
+	}
+
+	public String getSalasana() {
+		return salasana;
+	}
+
+	public void setSalasana(String salasana) {
+		SalasanaKryptaaja kryptaaja = new SalasanaKryptaaja();
+		String kryptattuSalasana = kryptaaja.kryptaaSalasana(salasana);
+		this.salasana = kryptattuSalasana;
+	}
+
+	public int getEnabled() {
+		return enabled;
+	}
+
+	public void setEnabled(int enabled) {
+		this.enabled = enabled;
+	}
+
+	public int getRoleId() {
+		return roleId;
+	}
+
+	public void setRoleId(int roleId) {
+		this.roleId = roleId;
 	}
 
 	@Override

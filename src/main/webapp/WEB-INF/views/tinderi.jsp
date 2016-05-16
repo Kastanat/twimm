@@ -53,6 +53,7 @@
 				riippumatta, vastaa sen perusteella kiinnostaako aihe, vaikket vielä
 				tuntisikaan sitä.
 			</p>
+			<p>Jos sinulla on jo tunnus, <a href="kirjaudu/loginpage" style="color: red">kirjaudu sisään</a>.</p>
 			<br>
 			<button class="alkaa btn">Aloita tästä</button>
 		</div>

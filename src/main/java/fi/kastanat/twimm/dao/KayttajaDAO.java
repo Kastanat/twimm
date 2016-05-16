@@ -16,6 +16,8 @@ public interface KayttajaDAO {
 	public abstract void tallennaKayttajanKiinnostukset(int kaytId, int kiinId);
 	
 	public abstract List<Kiinnostus> etsiKiinnostukset(int id);
+	
+	public abstract Kayttaja etsiSahkopostilla(String sahkoposti);
 
 }
 

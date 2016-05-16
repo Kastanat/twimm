@@ -39,7 +39,7 @@ public class KayttajaDAOSpringJdbcImpl implements KayttajaDAO {
 	 * generoima id asetetaan parametrina annettuun olioon.
 	 */
 	public void talleta(Kayttaja k) {
-		final String sql = "insert into kayttaja(etunimi, sukunimi, sahkoposti, kuvaus) values(?,?,?,?)";
+		final String sql = "insert into kayttaja(etunimi, sukunimi, sahkoposti, kuvaus, salasana_encrypted, enabled, role_id) values(?,?,?,?,?,?,?)";
 
 		// anonyymi sis‰luokka tarvitsee vakioina v‰litett‰v‰t arvot,
 		// jotta roskien keruu onnistuu t‰m‰n metodin suorituksen p‰‰ttyess‰.
@@ -47,6 +47,9 @@ public class KayttajaDAOSpringJdbcImpl implements KayttajaDAO {
 		final String sukunimi = k.getSukunimi();
 		final String sahkoposti = k.getSahkoposti();
 		final String kuvaus = k.getKuvaus();
+		final String salasanaEncrypted = k.getSalasana();
+		final int enabled = k.getEnabled();
+		final int roleId = k.getRoleId();
 
 		// jdbc pist‰‰ generoidun id:n t‰nne talteen
 		KeyHolder idHolder = new GeneratedKeyHolder();
@@ -62,6 +65,9 @@ public class KayttajaDAOSpringJdbcImpl implements KayttajaDAO {
 				ps.setString(2, sukunimi);
 				ps.setString(3, sahkoposti);
 				ps.setString(4, kuvaus);
+				ps.setString(5, salasanaEncrypted);
+				ps.setInt(6, enabled);
+				ps.setInt(7, roleId);
 				return ps;
 			}
 		}, idHolder);
@@ -75,6 +81,21 @@ public class KayttajaDAOSpringJdbcImpl implements KayttajaDAO {
 	public Kayttaja etsi(int id) {
 		String sql = "select id, etunimi, sukunimi, sahkoposti, kuvaus from kayttaja where id = ?";
 		Object[] parametrit = new Object[] { id };
+		RowMapper<Kayttaja> mapper = new KayttajaRowMapper();
+
+		Kayttaja k;
+		try {
+			k = jdbcTemplate.queryForObject(sql, parametrit, mapper);
+		} catch (IncorrectResultSizeDataAccessException e) {
+			throw new KayttajaaEiLoydyPoikkeus(e);
+		}
+		return k;
+
+	}
+	
+	public Kayttaja etsiSahkopostilla(String sahkoposti) {
+		String sql = "select id, etunimi, sukunimi, sahkoposti, kuvaus from kayttaja where sahkoposti = ?";
+		Object[] parametrit = new Object[] { sahkoposti };
 		RowMapper<Kayttaja> mapper = new KayttajaRowMapper();
 
 		Kayttaja k;
