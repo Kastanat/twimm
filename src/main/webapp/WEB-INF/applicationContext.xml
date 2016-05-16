@@ -1,10 +1,58 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
-	
-	
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx" xmlns:util="http://www.springframework.org/schema/util"
+	xmlns:sec="http://www.springframework.org/schema/security"
+	xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd
+	http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+	http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+	http://www.springframework.org/schema/security
+	http://www.springframework.org/schema/security/spring-security.xsd">
+
 	<import resource="spring-data.xml" />
 	
+	<sec:http auto-config="true" use-expressions="true">
+		
+		<sec:intercept-url pattern="/henk/*" access="hasRole('ROLE_ADMIN')" />
+		<sec:intercept-url pattern="/henk/*" access="isAuthenticated()" />
+		<sec:intercept-url pattern="/*" access="permitAll" />
+
+		<sec:form-login
+			login-page="/kirjaudu/loginpage"
+			default-target-url="/secure/main"
+			authentication-failure-url="/kirjaudu/loginfail" />
+			
+		<sec:logout logout-success-url="/kirjaudu/logout" />
+		
+	</sec:http>
+	
+	<bean id="encoder" class="org.springframework.security.crypto.password.StandardPasswordEncoder" />
+
+
+	<sec:authentication-manager>
+		<sec:authentication-provider>
+			<sec:password-encoder ref="encoder" />
+			<sec:jdbc-user-service data-source-ref="dataSource"
+				users-by-username-query="select sahkoposti, salasana_encrypted, enabled from kayttaja where sahkoposti=? and enabled = 1"
+				authorities-by-username-query="select k.sahkoposti, a.role from kayttaja k JOIN authority a ON (k.role_id = a.id) WHERE k.sahkoposti = ?" />
+		</sec:authentication-provider>
+	</sec:authentication-manager>
+
+	<!-- USER DEFINITIONS BY XML
+	
+	 <sec:authentication-manager>
+			<sec:authentication-provider>
+				<sec:user-service>
+					<sec:user name="user" password="userpassu" authorities="ROLE_USER" />
+					<sec:user name="admin" password="adminpassu" authorities="ROLE_ADMIN" />
+				</sec:user-service>
+			</sec:authentication-provider>
+		</sec:authentication-manager>
+	-->
+
+
+	<sec:global-method-security pre-post-annotations="enabled" />
+
 
 </beans>

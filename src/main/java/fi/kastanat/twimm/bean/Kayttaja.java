@@ -1,6 +1,5 @@
 package fi.kastanat.twimm.bean;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public interface Kayttaja {
@@ -28,5 +27,17 @@ public interface Kayttaja {
 	public abstract List<Kiinnostus> getKiinnostukset();
 	
 	public abstract void setKiinnostukset(List<Kiinnostus> kiinnostukset);
+	
+	public abstract String getSalasana();
 
+	public abstract void setSalasana(String salasana);
+
+	public abstract int getEnabled();
+
+	public abstract void setEnabled(int enabled);
+	
+	public abstract int getRoleId();
+	
+	public abstract void setRoleId(int roleId);
+	
 }

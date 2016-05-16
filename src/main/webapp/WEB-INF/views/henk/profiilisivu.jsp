@@ -2,6 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -22,6 +23,8 @@
 	<script src="resources/js/index.js"></script>
 </head>
 <body>
+<h3>Sisäänkirjautuneena: <sec:authentication property="principal.username"/></h3>
+<p><a href="../j_spring_security_logout" > Kirjaudu ulos</a></p>
 	<div class="container jumborunko">
 		<div class="jumbotron jumbobg">
 			<img src="../resources/images/tinder.jpg" alt="käyttäjän oma kuva" class="profiilikuva">
