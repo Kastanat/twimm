@@ -2,14 +2,17 @@
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://www.springframework.org/tags/form"  prefix="form"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Luo profiili</title>
 <link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css'>
-<link rel="stylesheet" href="resources/styles/style.css">
+<link rel="stylesheet" href="../resources/styles/style.css">
 </head>
+<header class="jumbobg">
+	<img alt="twimmlogo" src="../resources/images/twimm.png" height="200px">
+</header>
 <body>
 	<div class="col-md-6 col-md-offset-3">
 		<form:form class="form-horizontal" modelAttribute="kayttaja" method="POST">

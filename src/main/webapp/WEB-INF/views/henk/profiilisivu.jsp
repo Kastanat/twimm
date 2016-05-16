@@ -23,11 +23,10 @@
 	<script src="resources/js/index.js"></script>
 </head>
 <body>
-<h3>Sisäänkirjautuneena: <sec:authentication property="principal.username"/></h3>
-<p><a href="../j_spring_security_logout" > Kirjaudu ulos</a></p>
 	<div class="container jumborunko">
-		<div class="jumbotron jumbobg">
-			<img src="../resources/images/tinder.jpg" alt="käyttäjän oma kuva" class="profiilikuva">
+		<div class="jumbotron jumbobg jumboreuna">
+		<p class="text-right kirjautumisilmo">Sisäänkirjautuneena: <sec:authentication property="principal.username"/>, <a href="../j_spring_security_logout" class="uloskirjaus">kirjaudu ulos</a></p>
+			<img src="../resources/images/tinder.png" alt="twimmlogo" class="profiilikuva">
 			<div class="jumbotext">
 				<h2><c:out value="${kayttaja.etunimi}" default="-----"/>&nbsp;<c:out value="${kayttaja.sukunimi}" default="-----"/></h2>
 				<p class="lead"><c:out value="${kayttaja.kuvaus}" default="-----"/></p>
@@ -41,14 +40,12 @@
 				    <c:out value="${kiinnostus}"/><p />
 				</c:forEach>
 			</div>
-			
-
 			<div class="col-lg-6 ruudunjakaja">
 			<ul class="media-list main-list">
 			<c:forEach items="${kayttajat}" var="kayt">
 			  <li class="media">
 			    <div class="pull-left">
-			      <img class="media-object" src="../resources/images/tinder.jpg" alt="käyttäjän profiilikuvake" id="kuvake">
+			      <img class="media-object" src="../resources/images/tinder.png" alt="käyttäjän profiilikuvake" id="kuvake">
 			    </div>
 			    <div class="media-body">
 			      <h4 class="media-heading"><c:out value="${kayt.etunimi}"/> <c:out value="${kayt.sukunimi}"/></h4>
@@ -58,7 +55,7 @@
 			  </c:forEach>
 			  <li class="media">
 			    <div class="pull-left">
-			      <img class="media-object" src="../resources/images/tinder.jpg" alt="käyttäjän profiilikuvake" id="kuvake">
+			      <img class="media-object" src="../resources/images/tinder.png" alt="käyttäjän profiilikuvake" id="kuvake">
 			    </div>
 			    <div class="media-body">
 			      <h4 class="media-heading">Henkilö Heppu</h4>
@@ -67,7 +64,7 @@
 			  </li>
 			  <li class="media">
 			    <div class="pull-left">
-			      <img class="media-object" src="http://placehold.it/150x90" alt="käyttäjän profiilikuvake" id="kuvake">
+			      <img class="media-object" src="../resources/images/tinder.png" alt="käyttäjän profiilikuvake" id="kuvake">
 			    </div>
 			    <div class="media-body">
 			      <h4 class="media-heading">Laijo Jeppinen</h4>
