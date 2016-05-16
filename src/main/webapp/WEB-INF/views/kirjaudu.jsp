@@ -1,8 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ taglib uri="http://www.springframework.org/tags/form"  prefix="form"%>
-    
+<%@ taglib uri="http://www.springframework.org/tags/form"  prefix="form"%>  
 <!DOCTYPE html>
 <html>
 <head>
@@ -21,29 +20,27 @@
 	<img alt="twimmlogo" src="../resources/images/twimm.png" height="200px">
 </header>
 <body class="text-center">
-<div>
-	<c:if test="${not empty loginerror}">
-		<p class="Error">Sisäänkirjautuminen epäonnistui. Käyttäjätunnus tai salasana on syötetty väärin.</p>
-	</c:if>
-
-	<c:if test="${not empty loggedout}">
-		<p class="Info">Uloskirjautuminen onnistui</p>
-	</c:if>
-	<c:url value="/j_spring_security_check" var="loginUrl" />
-	<div class="col-md-4"></div>
-	<div class="col-md-4">
-	<h1>Kirjaudu sisään</h1>
-	<form action="${loginUrl}" method="post">
-		<div class="kirjautuminen form-group">
-		<br><br>
-		<label>Sähköposti: </label><input type='text' name='j_username' value='' class="form-control"><br>
-		<label>Salasana: </label><input type='password' name='j_password' class="form-control"/><br>
-		<button type="submit" class="btn">Kirjaudu</button>
+	<div>
+		<c:if test="${not empty loginerror}">
+			<p class="Error">Sisäänkirjautuminen epäonnistui. Käyttäjätunnus tai salasana on syötetty väärin.</p>
+		</c:if>
+		<c:if test="${not empty loggedout}">
+			<p class="Info">Uloskirjautuminen onnistui</p>
+		</c:if>
+		<c:url value="/j_spring_security_check" var="loginUrl" />
+		<div class="col-md-4"></div>
+		<div class="col-md-4">
+			<h1>Kirjaudu sisään</h1>
+			<form action="${loginUrl}" method="post">
+				<div class="kirjautuminen form-group">
+					<br><br>
+					<label>Sähköposti: </label><input type='text' name='j_username' value='' class="form-control"><br>
+					<label>Salasana: </label><input type='password' name='j_password' class="form-control"/><br>
+					<button type="submit" class="btn">Kirjaudu</button>
+				</div>
+			</form>
 		</div>
-	</form>
+		<div class="col-md-4"></div>
 	</div>
-	<div class="col-md-4"></div>
-	</div>
-
 </body>
 </html>

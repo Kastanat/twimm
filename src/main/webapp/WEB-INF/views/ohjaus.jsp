@@ -21,9 +21,7 @@
 	<img alt="twimmlogo" src="../resources/images/twimm.png" height="200px">
 </header>
 <body class="text-center">
-
-<p>Profiilin luonti onnistui!</p><br>
-<a href="../kirjaudu/loginpage" class="btn btn-success" role="button">Kirjaudu sisään</a>
-
+	<p>Profiilin luonti onnistui!</p><br>
+	<a href="../kirjaudu/loginpage" class="btn btn-success" role="button">Kirjaudu sisään</a>
 </body>
 </html>

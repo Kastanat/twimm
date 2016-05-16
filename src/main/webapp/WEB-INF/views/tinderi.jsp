@@ -30,15 +30,16 @@
 		</c:forEach>
 	</script>
 	<script src="resources/js/index.js"></script>  
-	
 </head>
 <header class="jumbobg">
 	<img alt="twimmlogo" src="resources/images/twimm.png" height="200px">
-</header>
-	 
+</header>	 
 <body class="text-center">
 	<div class="col-md-4">
-		<div class="tinder"><button value="no" class="nappi btn pull-right"><span class="glyphicon glyphicon-thumbs-down"></span></button>
+		<div class="tinder">
+			<button value="no" class="nappi btn pull-right">
+				<span class="glyphicon glyphicon-thumbs-down"></span>
+			</button>
 		</div>
 	</div>
 	<div class="col-md-4">
@@ -46,8 +47,6 @@
 			<h1 id="teksti"></h1>
 		</div>
 		<div class="aloitus">
-			<!--  <h1><b>SOFTALATINDERI</b></h1>
-			<br><br>-->
 			<p>
 				Ruudulle listautuu eri aihepiirejä. <br>Taitotasosta
 				riippumatta, vastaa sen perusteella kiinnostaako aihe, vaikket vielä
@@ -57,10 +56,8 @@
 			<br>
 			<button class="alkaa btn">Aloita tästä</button>
 		</div>
-		
 		<div class="kiinnostavat">
 			<div class="tinder">
-			
 			</div>
 		</div><br>
 		<div class="lomake">
