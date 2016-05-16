@@ -45,15 +45,17 @@
 
 			<div class="col-lg-6 ruudunjakaja">
 			<ul class="media-list main-list">
+			<c:forEach items="${kayttajat}" var="kayt">
 			  <li class="media">
 			    <div class="pull-left">
 			      <img class="media-object" src="../resources/images/tinder.jpg" alt="käyttäjän profiilikuvake" id="kuvake">
 			    </div>
 			    <div class="media-body">
-			      <h4 class="media-heading">Henkilö yksi</h4>
-			      <p class="by-author">Yhteisiä kiinnostuksia X kpl</p>
+			      <h4 class="media-heading"><c:out value="${kayt.etunimi}"/> <c:out value="${kayt.sukunimi}"/></h4>
+			      <p class="by-author"><c:forEach items="${kayt.kiinnostukset}" var="kiin"><c:out value="${kiin.kiinnostus}"/>, </c:forEach></p>
 			    </div>
 			  </li>
+			  </c:forEach>
 			  <li class="media">
 			    <div class="pull-left">
 			      <img class="media-object" src="../resources/images/tinder.jpg" alt="käyttäjän profiilikuvake" id="kuvake">

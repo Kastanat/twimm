@@ -28,7 +28,15 @@ public class SecureController {
 		Kayttaja kayttaja = dao.etsiSahkopostilla(authentication.getName());
 		List<Kiinnostus> kaytKiinnostukset = dao.etsiKiinnostukset(kayttaja.getId());
 		kayttaja.setKiinnostukset(kaytKiinnostukset);
+		List <Kayttaja> kayttajat = dao.haeKaikki();
+		for (int i = 0; i < kayttajat.size(); i++) {
+			Kayttaja kayt = kayttajat.get(i);
+			List<Kiinnostus> kiinnostukset = dao.etsiKiinnostukset(kayt.getId());
+			kayt.setKiinnostukset(kiinnostukset);
+		}
+		
 		model.addAttribute("kayttaja", kayttaja);
+		model.addAttribute("kayttajat", kayttajat);
 		
 		return "henk/profiilisivu";
 	}
