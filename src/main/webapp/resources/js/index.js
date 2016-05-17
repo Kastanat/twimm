@@ -11,7 +11,7 @@ $(document).ready(function() {
   $(".alkaa").click(function() {
   $(".aloitus").hide();
   $(".tinder").show();
-  $("#teksti").html(idLista[i] + lista[i]);
+  $("#teksti").html(lista[i]);
   });
  
   $('.nappi').click(function(){
@@ -21,7 +21,7 @@ $(document).ready(function() {
     	kiinnostavatId.push(idLista[i]);
     }  
     i++;
-    $('#teksti').html(idLista[i] + lista[i]);
+    $('#teksti').html(lista[i]);
     if(i === lista.length) {
         $(".tinder").hide();
         var text = kiinnostavat.join("<br>");
